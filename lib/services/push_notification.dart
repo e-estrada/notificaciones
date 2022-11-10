@@ -14,19 +14,19 @@ class PushNotificationService {
   static Future _backgroundHandler(RemoteMessage message) async {
     // print('onBackground Handler ${message.messageId}');
     print(message.data);
-    _messageStream.sink.add(message.notification?.body ?? 'No Title');
+    _messageStream.sink.add(message.data['producto'] ?? 'No Data');
   }
 
   static Future _onMessageHandler(RemoteMessage message) async {
     // print('onMessage Handler ${message.messageId}');
     print(message.data);
-    _messageStream.sink.add(message.notification?.body ?? 'No Title');
+    _messageStream.sink.add(message.data['producto'] ?? 'No Data');
   }
 
   static Future _onMessageOpenApp(RemoteMessage message) async {
     // print('onMessageOpenApp Handler ${message.messageId}');
     print(message.data);
-    _messageStream.sink.add(message.notification?.body ?? 'No Title');
+    _messageStream.sink.add(message.data['producto'] ?? 'No Data');
   }
 
   static Future initializeApp() async {
